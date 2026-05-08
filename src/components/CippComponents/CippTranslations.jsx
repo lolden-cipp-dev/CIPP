@@ -9,6 +9,7 @@ export const CippTranslations = {
   surName: "Surname",
   city: "City",
   tenant: "Tenant",
+  tenants: "Tenants",
   tenantFilter: "Tenant",
   showTenantInformation: "Show Tenant Information",
   refreshTenantList: "Refresh tenant list",
