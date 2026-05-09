@@ -1,6 +1,5 @@
 import { Layout as DashboardLayout } from "../../../../layouts/index.js";
 import { CippTablePage } from "../../../../components/CippComponents/CippTablePage.jsx";
-import { Book } from "@mui/icons-material";
 import { TrashIcon } from "@heroicons/react/24/outline";
 import { CippDeployCompliancePolicyDrawer } from "../../../../components/CippComponents/CippDeployCompliancePolicyDrawer.jsx";
 import { PermissionButton } from "../../../../utils/permissions.js";
@@ -11,17 +10,6 @@ const Page = () => {
   const cardButtonPermissions = ["Security.SensitiveInfoType.ReadWrite"];
 
   const actions = [
-    {
-      label: "Create template based on SIT",
-      type: "POST",
-      icon: <Book />,
-      url: "/api/AddSensitiveInfoTypeTemplate",
-      dataFunction: (data) => {
-        return { ...data };
-      },
-      confirmText:
-        "Are you sure you want to create a template based on this Sensitive Information Type?",
-    },
     {
       label: "Delete SIT",
       type: "POST",
@@ -63,6 +51,7 @@ const Page = () => {
     <CippTablePage
       title={pageTitle}
       apiUrl={apiUrl}
+      queryKey="ListSensitiveInfoType"
       actions={actions}
       offCanvas={offCanvas}
       simpleColumns={simpleColumns}
