@@ -16,9 +16,7 @@ const Page = () => {
       type: "POST",
       icon: <Book />,
       url: "/api/AddRetentionCompliancePolicyTemplate",
-      dataFunction: (data) => {
-        return { ...data };
-      },
+      data: { Identity: "Name" },
       confirmText: "Are you sure you want to create a template based on this retention policy?",
     },
     {
