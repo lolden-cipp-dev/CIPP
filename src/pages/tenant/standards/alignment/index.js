@@ -794,7 +794,7 @@ const Page = () => {
                 onChange={(event, newFilter) => {
                   if (newFilter !== null) setByStandardTenantFilter(newFilter)
                 }}
-                sx={{ alignSelf: { xs: 'flex-start', sm: 'center' } }}
+                sx={{ alignSelf: { xs: 'flex-start', sm: 'center' }, '& .MuiToggleButton-root': { py: 0.25, px: 1, fontSize: '0.75rem' } }}
               >
                 <ToggleButton value="all">All ({tenants.length})</ToggleButton>
                 <ToggleButton value="compliant">Compliant ({compliantTenants.length})</ToggleButton>
@@ -868,6 +868,7 @@ const Page = () => {
         onChange={(event, newViewMode) => {
           if (newViewMode !== null) setViewMode(newViewMode)
         }}
+        sx={{ '& .MuiToggleButton-root': { py: 0.25, px: 1, fontSize: '0.75rem' } }}
       >
         <ToggleButton value="summary" aria-label="summary view">
           <Tooltip title="Tenant/template summary" placement="top">
