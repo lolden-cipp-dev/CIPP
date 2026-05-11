@@ -675,6 +675,11 @@ export const nativeMenuItems = [
             permissions: ['Exchange.Mailbox.*'],
           },
           {
+            title: 'HVE Accounts',
+            path: '/email/administration/hve-accounts',
+            permissions: ['Exchange.Mailbox.*'],
+          },
+          {
             title: 'Deleted Mailboxes',
             path: '/email/administration/deleted-mailboxes',
             permissions: ['Exchange.Mailbox.*'],
