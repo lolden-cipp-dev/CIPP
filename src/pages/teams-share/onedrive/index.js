@@ -13,6 +13,7 @@ const Page = () => {
     syncData: { Types: 'OneDriveUsageAccount' },
     allowToggle: true,
     defaultCached: false,
+    allowAllTenantSync: true,
   })
 
   const actions = [

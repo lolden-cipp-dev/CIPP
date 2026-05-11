@@ -27,6 +27,7 @@ const Page = () => {
     syncData: { Types: 'SharePointSiteUsage' },
     allowToggle: true,
     defaultCached: true,
+    allowAllTenantSync: true,
   })
 
   const actions = [
