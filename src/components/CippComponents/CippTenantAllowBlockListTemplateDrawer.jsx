@@ -28,8 +28,10 @@ export const CippTenantAllowBlockListTemplateDrawer = ({
   setDrawerVisible: controlledSetDrawerVisible,
 }) => {
   const [internalDrawerVisible, internalSetDrawerVisible] = useState(false)
-  const drawerVisible = controlledDrawerVisible !== undefined ? controlledDrawerVisible : internalDrawerVisible
-  const setDrawerVisible = controlledSetDrawerVisible !== undefined ? controlledSetDrawerVisible : internalSetDrawerVisible
+  const drawerVisible =
+    controlledDrawerVisible !== undefined ? controlledDrawerVisible : internalDrawerVisible
+  const setDrawerVisible =
+    controlledSetDrawerVisible !== undefined ? controlledSetDrawerVisible : internalSetDrawerVisible
 
   const isEditMode = !!editData
 
@@ -42,10 +44,14 @@ export const CippTenantAllowBlockListTemplateDrawer = ({
     if (editData && drawerVisible) {
       formControl.reset({
         templateName: editData.templateName || '',
-        entries: Array.isArray(editData.entries) ? editData.entries.join(', ') : editData.entries || '',
+        entries: Array.isArray(editData.entries)
+          ? editData.entries.join(', ')
+          : editData.entries || '',
         notes: editData.notes || '',
         listType: editData.listType ? { label: editData.listType, value: editData.listType } : null,
-        listMethod: editData.listMethod ? { label: editData.listMethod, value: editData.listMethod } : null,
+        listMethod: editData.listMethod
+          ? { label: editData.listMethod, value: editData.listMethod }
+          : null,
         NoExpiration: editData.NoExpiration || false,
         RemoveAfter: editData.RemoveAfter || false,
       })
@@ -251,7 +257,11 @@ export const CippTenantAllowBlockListTemplateDrawer = ({
       )}
 
       <CippOffCanvas
-        title={isEditMode ? 'Edit Tenant Allow/Block List Template' : 'Save Tenant Allow/Block List Template'}
+        title={
+          isEditMode
+            ? 'Edit Tenant Allow/Block List Template'
+            : 'Save Tenant Allow/Block List Template'
+        }
         visible={drawerVisible}
         onClose={handleCloseDrawer}
         size="lg"
@@ -266,8 +276,12 @@ export const CippTenantAllowBlockListTemplateDrawer = ({
               {saveTemplate.isLoading
                 ? 'Saving...'
                 : saveTemplate.isSuccess
-                  ? isEditMode ? 'Saved' : 'Save Another'
-                  : isEditMode ? 'Update Template' : 'Save Template'}
+                  ? isEditMode
+                    ? 'Saved'
+                    : 'Save Another'
+                  : isEditMode
+                    ? 'Update Template'
+                    : 'Save Template'}
             </Button>
             <Button variant="outlined" onClick={handleCloseDrawer}>
               Close

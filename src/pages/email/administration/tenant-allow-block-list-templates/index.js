@@ -58,9 +58,7 @@ const Page = () => {
         actions={actions}
         offCanvas={offCanvas}
         simpleColumns={simpleColumns}
-        cardButton={
-          <CippTenantAllowBlockListTemplateDrawer />
-        }
+        cardButton={<CippTenantAllowBlockListTemplateDrawer />}
       />
       <CippTenantAllowBlockListTemplateDrawer
         editData={editData}
