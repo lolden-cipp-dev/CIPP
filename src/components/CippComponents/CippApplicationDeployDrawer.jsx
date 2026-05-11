@@ -407,6 +407,21 @@ export const CippApplicationDeployDrawer = ({
                 />
               </Grid>
             </CippFormCondition>
+            <CippFormCondition
+              formControl={formControl}
+              field="AssignTo"
+              compareType="isNot"
+              compareValue="On"
+            >
+              <Grid size={{ xs: 12 }}>
+                <CippFormComponent
+                  type="textField"
+                  label="Exclude Group Names separated by comma. Wildcards (*) are allowed"
+                  name="excludeGroup"
+                  formControl={formControl}
+                />
+              </Grid>
+            </CippFormCondition>
           </CippFormCondition>
 
           {/* WinGet App Section */}
@@ -520,6 +535,21 @@ export const CippApplicationDeployDrawer = ({
                   name="customGroup"
                   formControl={formControl}
                   validators={{ required: 'Please specify custom group names' }}
+                />
+              </Grid>
+            </CippFormCondition>
+            <CippFormCondition
+              formControl={formControl}
+              field="AssignTo"
+              compareType="isNot"
+              compareValue="On"
+            >
+              <Grid size={{ xs: 12 }}>
+                <CippFormComponent
+                  type="textField"
+                  label="Exclude Group Names separated by comma. Wildcards (*) are allowed"
+                  name="excludeGroup"
+                  formControl={formControl}
                 />
               </Grid>
             </CippFormCondition>
@@ -666,6 +696,21 @@ export const CippApplicationDeployDrawer = ({
                   name="customGroup"
                   formControl={formControl}
                   validators={{ required: 'Please specify custom group names' }}
+                />
+              </Grid>
+            </CippFormCondition>
+            <CippFormCondition
+              formControl={formControl}
+              field="AssignTo"
+              compareType="isNot"
+              compareValue="On"
+            >
+              <Grid size={{ xs: 12 }}>
+                <CippFormComponent
+                  type="textField"
+                  label="Exclude Group Names separated by comma. Wildcards (*) are allowed"
+                  name="excludeGroup"
+                  formControl={formControl}
                 />
               </Grid>
             </CippFormCondition>
@@ -829,6 +874,21 @@ export const CippApplicationDeployDrawer = ({
                   name="customGroup"
                   formControl={formControl}
                   validators={{ required: 'Please specify custom group names' }}
+                />
+              </Grid>
+            </CippFormCondition>
+            <CippFormCondition
+              formControl={formControl}
+              field="AssignTo"
+              compareType="isNot"
+              compareValue="On"
+            >
+              <Grid size={{ xs: 12 }}>
+                <CippFormComponent
+                  type="textField"
+                  label="Exclude Group Names separated by comma. Wildcards (*) are allowed"
+                  name="excludeGroup"
+                  formControl={formControl}
                 />
               </Grid>
             </CippFormCondition>
@@ -1002,6 +1062,21 @@ export const CippApplicationDeployDrawer = ({
                   name="customGroup"
                   formControl={formControl}
                   validators={{ required: 'Please specify custom group names' }}
+                />
+              </Grid>
+            </CippFormCondition>
+            <CippFormCondition
+              formControl={formControl}
+              field="AssignTo"
+              compareType="isNot"
+              compareValue="On"
+            >
+              <Grid size={{ xs: 12 }}>
+                <CippFormComponent
+                  type="textField"
+                  label="Exclude Group Names separated by comma. Wildcards (*) are allowed"
+                  name="excludeGroup"
+                  formControl={formControl}
                 />
               </Grid>
             </CippFormCondition>
