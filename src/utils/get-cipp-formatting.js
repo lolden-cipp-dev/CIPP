@@ -259,7 +259,11 @@ export const getCippFormatting = (data, cellName, type, canReceive, flatten = tr
     return isText ? data : data
   }
 
-  if (cellName === 'alignmentScore' || cellName === 'combinedAlignmentScore') {
+  if (
+    cellName === 'alignmentScore' ||
+    cellName === 'combinedAlignmentScore' ||
+    cellName === 'compliancePercentage'
+  ) {
     // Handle alignment score, return a percentage with a label
     return isText ? (
       `${data}%`
