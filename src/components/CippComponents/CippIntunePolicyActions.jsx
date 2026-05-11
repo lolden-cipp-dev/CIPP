@@ -63,6 +63,11 @@ export const useCippIntunePolicyActions = (tenant, policyType, options = {}) => 
       defaultValue: "include",
       helperText: "Choose whether to include or exclude devices matching the filter.",
     },
+    {
+      type: "textField",
+      name: "excludeGroup",
+      label: "Exclude Group Names separated by comma. Wildcards (*) are allowed",
+    },
   ];
 
   const getCustomDataFormatter = (assignTo) => (row, action, formData) => {
@@ -74,6 +79,7 @@ export const useCippIntunePolicyActions = (tenant, policyType, options = {}) => 
       ...(platformType && { platformType }),
       AssignTo: assignTo,
       assignmentMode: formData?.assignmentMode || "replace",
+      excludeGroup: formData?.excludeGroup || null,
       AssignmentFilterName: formData?.assignmentFilter?.value || null,
       AssignmentFilterType: formData?.assignmentFilter?.value
         ? formData?.assignmentFilterType || "include"
@@ -92,6 +98,7 @@ export const useCippIntunePolicyActions = (tenant, policyType, options = {}) => 
       GroupIds: selectedGroups.map((group) => group.value).filter(Boolean),
       GroupNames: selectedGroups.map((group) => group.label).filter(Boolean),
       assignmentMode: formData?.assignmentMode || "replace",
+      excludeGroup: formData?.excludeGroup || null,
       AssignmentFilterName: formData?.assignmentFilter?.value || null,
       AssignmentFilterType: formData?.assignmentFilter?.value
         ? formData?.assignmentFilterType || "include"

@@ -118,6 +118,11 @@ const Page = () => {
           name: "customGroup",
           label: "Custom Group Names (comma separated, wildcards allowed)",
         },
+        {
+          type: "textField",
+          name: "excludeGroup",
+          label: "Exclude Group Names (comma separated, wildcards allowed)",
+        },
       ],
       customDataformatter: (row, action, formData) => ({
         templateId: row.GUID,
@@ -127,6 +132,7 @@ const Page = () => {
         })),
         AssignTo: formData?.AssignTo || "",
         customGroup: formData?.customGroup || "",
+        excludeGroup: formData?.excludeGroup || "",
       }),
       confirmText: 'Deploy "[displayName]" ([appCount] apps) to the selected tenants?',
     },
