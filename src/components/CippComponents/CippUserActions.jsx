@@ -671,13 +671,22 @@ export const useCippUserActions = () => {
           validators: { required: 'Please select a sharing level' },
           options: [
             { label: 'Disabled - No external sharing allowed', value: 'Disabled' },
-            { label: 'External User Sharing Only - Guests must sign in', value: 'ExternalUserSharingOnly' },
-            { label: 'External User and Guest Sharing - Anyone links allowed', value: 'ExternalUserAndGuestSharing' },
-            { label: 'Existing External User Sharing Only - Existing guests only', value: 'ExistingExternalUserSharingOnly' },
+            {
+              label: 'External User Sharing Only - Guests must sign in',
+              value: 'ExternalUserSharingOnly',
+            },
+            {
+              label: 'External User and Guest Sharing - Anyone links allowed',
+              value: 'ExternalUserAndGuestSharing',
+            },
+            {
+              label: 'Existing External User Sharing Only - Existing guests only',
+              value: 'ExistingExternalUserSharingOnly',
+            },
           ],
         },
       ],
-      confirmText: 'Select the sharing level for [userPrincipalName]\'s OneDrive:',
+      confirmText: "Select the sharing level for [userPrincipalName]'s OneDrive:",
       multiPost: false,
       condition: () => canWriteUser,
     },
