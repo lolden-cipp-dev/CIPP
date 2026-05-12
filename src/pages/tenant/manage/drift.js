@@ -1376,6 +1376,7 @@ const ManageDriftPage = () => {
   )
 
   // Actions for the ActionsMenu
+  const currentDriftTemplate = standardsApi.data?.find((t) => t.GUID === templateId)
   const actions = createDriftManagementActions({
     templateId,
     onRefresh: () => {
@@ -1389,6 +1390,12 @@ const ManageDriftPage = () => {
       setTriggerReport(true)
     },
     currentTenant: tenantFilter,
+    templateTenants: Array.isArray(currentDriftTemplate?.tenantFilter)
+      ? currentDriftTemplate.tenantFilter
+      : [],
+    excludedTenants: Array.isArray(currentDriftTemplate?.excludedTenants)
+      ? currentDriftTemplate.excludedTenants
+      : [],
   })
 
   // Effect to trigger the ExecutiveReportButton when needed
