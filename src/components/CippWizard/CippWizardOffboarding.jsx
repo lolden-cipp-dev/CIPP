@@ -206,6 +206,13 @@ export const CippWizardOffboarding = (props) => {
                 disabled={!!deleteUser}
               />
               <CippFormComponent
+                name="DisableOneDriveSharing"
+                label="Disable OneDrive Sharing Links"
+                type="switch"
+                formControl={formControl}
+                disabled={!!deleteUser}
+              />
+              <CippFormComponent
                 name="DeleteUser"
                 label="Delete user"
                 type="switch"
@@ -311,7 +318,6 @@ export const CippWizardOffboarding = (props) => {
                   },
                 }}
               />
-
               <Typography variant="subtitle2" sx={{ mt: 3 }} gutterBottom>
                 Email Forwarding
               </Typography>

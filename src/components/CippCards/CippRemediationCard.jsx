@@ -60,6 +60,7 @@ export default function CippRemediationCard(props) {
         <ListItem>Disconnect all current sessions</ListItem>
         <ListItem>Remove all MFA methods for the user</ListItem>
         <ListItem>Disable all inbox rules for the user</ListItem>
+        <ListItem>Disable OneDrive sharing</ListItem>
       </List>
       <CippApiDialog
         title="Remediate User"

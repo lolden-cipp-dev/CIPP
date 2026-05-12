@@ -215,6 +215,16 @@ export const CippOffboardingDefaultSettings = (props) => {
             />
           ),
         },
+        {
+          label: "Disable OneDrive Sharing Links",
+          value: (
+            <CippFormComponent
+              type="switch"
+              name="offboardingDefaults.DisableOneDriveSharing"
+              formControl={formControl}
+            />
+          ),
+        },
       ]}
     />
     </>
