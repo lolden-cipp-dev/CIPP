@@ -117,7 +117,10 @@ const Page = () => {
       if (!standardKey) return
 
       const standardInfo = getStandardInfo(row.standardId)
-      const standardName = standardInfo?.label ?? row.standardName ?? standardKey
+      const hasExactMatch = standardsData.find((s) => s.name === row.standardId)
+      const standardName = hasExactMatch
+        ? (standardInfo?.label ?? row.standardName ?? standardKey)
+        : (row.standardName ?? standardInfo?.label ?? standardKey)
 
       if (!groupedStandards.has(standardKey)) {
         groupedStandards.set(standardKey, {
