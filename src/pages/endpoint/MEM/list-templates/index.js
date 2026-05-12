@@ -167,7 +167,7 @@ const Page = () => {
   const offCanvas = {
     children: (row) => (
       <Stack spacing={2} sx={{ p: 2 }}>
-        {Array.isArray(row.usedInTemplates) && row.usedInTemplates.length > 0 && (
+        {Array.isArray(row.usage) && row.usage.length > 0 && (
           <Box>
             <Typography
               variant="caption"
@@ -188,7 +188,7 @@ const Page = () => {
                 </TableRow>
               </TableHead>
               <TableBody>
-                {row.usedInTemplates.map((u, i) => (
+                {row.usage.map((u, i) => (
                   <TableRow key={i}>
                     <TableCell>
                       <Link
@@ -212,7 +212,10 @@ const Page = () => {
                           />
                         </Tooltip>
                       ) : (
-                        <Tooltip title="This template is directly referenced by GUID in the standards template" arrow>
+                        <Tooltip
+                          title="This template is directly referenced by GUID in the standards template"
+                          arrow
+                        >
                           <Chip label="Direct" size="small" variant="outlined" />
                         </Tooltip>
                       )}
@@ -229,14 +232,7 @@ const Page = () => {
     size: 'lg',
   }
 
-  const simpleColumns = [
-    'displayName',
-    'isSynced',
-    'package',
-    'description',
-    'Type',
-    'usedInTemplates',
-  ]
+  const simpleColumns = ['displayName', 'isSynced', 'package', 'description', 'Type', 'usage']
 
   const filterList = [
     {
