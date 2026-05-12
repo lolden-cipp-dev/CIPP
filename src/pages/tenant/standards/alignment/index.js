@@ -797,7 +797,10 @@ const Page = () => {
                 onChange={(event, newFilter) => {
                   if (newFilter !== null) setByStandardTenantFilter(newFilter)
                 }}
-                sx={{ alignSelf: { xs: 'flex-start', sm: 'center' }, '& .MuiToggleButton-root': { py: 0.25, px: 1, fontSize: '0.75rem' } }}
+                sx={{
+                  alignSelf: { xs: 'flex-start', sm: 'center' },
+                  '& .MuiToggleButton-root': { py: 0.25, px: 1, fontSize: '0.75rem' },
+                }}
               >
                 <ToggleButton value="all">All ({tenants.length})</ToggleButton>
                 <ToggleButton value="compliant">Compliant ({compliantTenants.length})</ToggleButton>
