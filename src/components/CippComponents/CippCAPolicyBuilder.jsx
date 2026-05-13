@@ -1117,5 +1117,25 @@ export function extractCAPolicyJSON(formValues) {
     );
   }
 
+  // Post-process: strip session control sub-objects where isEnabled is false.
+  // Graph validates fields like `mode` even when disabled — safest to omit entirely.
+  if (cleaned.sessionControls) {
+    const sessionKeys = [
+      "applicationEnforcedRestrictions",
+      "cloudAppSecurity",
+      "signInFrequency",
+      "persistentBrowser",
+    ];
+    for (const key of sessionKeys) {
+      if (cleaned.sessionControls[key]?.isEnabled === false) {
+        delete cleaned.sessionControls[key];
+      }
+    }
+    // If sessionControls is now empty, remove it too
+    if (Object.keys(cleaned.sessionControls).length === 0) {
+      delete cleaned.sessionControls;
+    }
+  }
+
   return cleaned;
 }
