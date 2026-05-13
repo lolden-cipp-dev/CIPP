@@ -341,6 +341,7 @@ export const CippDataTable = (props) => {
     },
     exportEnabled = true,
     simpleColumns = [],
+    dataFilter,
     actions,
     title = 'Report',
     simple = false,
@@ -476,7 +477,7 @@ export const CippDataTable = (props) => {
         const nestedData = getNestedValue(page, api.dataKey)
         return nestedData !== undefined ? nestedData : []
       })
-      setUsedData(combinedResults)
+      setUsedData(dataFilter ? combinedResults.filter(dataFilter) : combinedResults)
     }
   }, [
     getRequestData.isSuccess,

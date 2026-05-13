@@ -1,5 +1,4 @@
 import { Container } from "@mui/material";
-import { Grid } from "@mui/system";
 import { TabbedLayout } from "../../../../layouts/TabbedLayout";
 import { Layout as DashboardLayout } from "../../../../layouts/index.js";
 import tabOptions from "./tabOptions";
@@ -8,11 +7,7 @@ import { CippContainerManagement } from "../../../../components/CippSettings/Cip
 const Page = () => {
   return (
     <Container sx={{ pt: 3 }} maxWidth="xl">
-      <Grid container spacing={2}>
-        <Grid size={{ lg: 6, md: 8, sm: 12, xs: 12 }}>
-          <CippContainerManagement />
-        </Grid>
-      </Grid>
+      <CippContainerManagement />
     </Container>
   );
 };
