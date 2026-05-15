@@ -1116,6 +1116,13 @@ export const nativeMenuItems = [
             permissions: ['CIPP.SuperAdmin.*'],
             scope: 'global',
           },
+          {
+            title: 'Worker Health',
+            path: '/cipp/advanced/worker-health',
+            roles: ['superadmin'],
+            permissions: ['CIPP.SuperAdmin.*'],
+            scope: 'global',
+          },
         ],
       },
     ],
